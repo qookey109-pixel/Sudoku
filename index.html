@@ -3172,6 +3172,11 @@ function updateControls() {
     const allowed = mode === "number" || (mode === "note" ? rules.allowNotes : rules.allowAuto);
     const active = mode === inputMode;
 
+    if (mode === "note") {
+      const label = button.querySelector("span:last-child");
+      if (label) label.textContent = active ? "退出筆記" : "筆記";
+    }
+
     button.classList.toggle("active", active);
     button.classList.toggle("locked", !allowed);
     button.setAttribute("aria-pressed", String(active));
@@ -3179,7 +3184,7 @@ function updateControls() {
     button.setAttribute(
       "aria-label",
       allowed
-        ? (mode === "number" ? "填數字模式" : mode === "note" ? "鉛筆筆記模式" : "自動候選模式")
+        ? (mode === "number" ? "填數字模式" : mode === "note" ? (active ? "退出筆記模式" : "鉛筆筆記模式") : "自動候選模式")
         : `${mode === "note" ? "鉛筆筆記" : "自動候選"}，此難度已鎖定`
     );
   });
