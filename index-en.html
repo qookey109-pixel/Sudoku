@@ -3172,6 +3172,11 @@ function updateControls() {
     const allowed = mode === "number" || (mode === "note" ? rules.allowNotes : rules.allowAuto);
     const active = mode === inputMode;
 
+    if (mode === "note") {
+      const label = button.querySelector("span:last-child");
+      if (label) label.textContent = active ? "Exit Notes" : "Notes";
+    }
+
     button.classList.toggle("active", active);
     button.classList.toggle("locked", !allowed);
     button.setAttribute("aria-pressed", String(active));
@@ -3179,7 +3184,7 @@ function updateControls() {
     button.setAttribute(
       "aria-label",
       allowed
-        ? (mode === "number" ? "Number mode" : mode === "note" ? "Notes mode" : "Auto Candidates mode")
+        ? (mode === "number" ? "Number mode" : mode === "note" ? (active ? "Exit Notes" : "Notes mode") : "Auto Candidates mode")
         : `${mode === "note" ? "Notes" : "Auto Candidates"} are locked at this difficulty`
     );
   });
