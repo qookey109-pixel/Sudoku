@@ -128,31 +128,6 @@ button:disabled {
   align-items: center;
   gap: 7px;
 }
-
-.network-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  min-height: 42px;
-  padding: 6px 9px;
-  border: 2px solid var(--line-strong);
-  border-radius: 9px;
-  background: #e7edf3;
-  color: #28435c;
-  cursor: pointer;
-  font-size: 12px;
-  font-weight: 850;
-}
-
-.network-button:hover {
-  background: #dce6ef;
-}
-
-.network-lock {
-  font-size: 10px;
-}
-
 .brand h1 {
   margin: 0;
   font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
@@ -916,15 +891,6 @@ button:disabled {
   .brand p {
     max-width: 210px;
   }
-
-  .network-button {
-    min-width: 44px;
-    padding: 5px 7px;
-  }
-
-  .network-button span:nth-child(2) {
-    display: none;
-  }
 }
 
 @media (max-width: 359px) {
@@ -1518,12 +1484,7 @@ body.game-mode {
           </div>
 
           <div class="brand-actions">
-            <button id="networkBtn" class="network-button" type="button" aria-label="網路功能準備中">
-              <span aria-hidden="true">🌐</span>
-              <span>網路</span>
-              <span class="network-lock" aria-hidden="true">🔒</span>
-            </button>
-            <span class="version" aria-label="版本 8">V8</span>
+<span class="version" aria-label="版本 8">V8</span>
           </div>
         </div>
       </header>
@@ -2214,7 +2175,6 @@ const generatorStatusEl = document.getElementById("generatorStatus");
 const generatorStatusTitleEl = document.getElementById("generatorStatusTitle");
 const generatorStatusTextEl = document.getElementById("generatorStatusText");
 const puzzleMetaTextEl = document.getElementById("puzzleMetaText");
-const networkBtn = document.getElementById("networkBtn");
 const eraseBtn = document.getElementById("eraseBtn");
 const resetBtn = document.getElementById("resetBtn");
 const newBtn = document.getElementById("newBtn");
@@ -3652,14 +3612,6 @@ closeSandwichIntroBtn.addEventListener("click", () => sandwichIntroDialogEl.clos
 sandwichIntroDialogEl.addEventListener("close", () => {
   sandwichIntroBtn.focus();
 });
-
-
-
-networkBtn.addEventListener("click", () => {
-  showToast("網路功能已預留：下一步可加入房間碼、排行榜與雲端進度 🌐");
-});
-
-
 startGameBtn.addEventListener("click", showGameView);
 backToMenuBtn.addEventListener("click", showSetupView);
 
