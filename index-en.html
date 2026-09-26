@@ -1500,6 +1500,319 @@ body.game-mode {
   text-wrap: pretty;
 }
 
+
+/* V9 — resolution-safe responsive layout */
+
+/* Let narrow embeds shrink instead of forcing horizontal overflow. */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  min-width: 0;
+}
+
+.app,
+.setup-view,
+.game-view,
+.card,
+.brand,
+.brand-row,
+.brand-actions,
+.game-header,
+.game-header-title,
+.game-header-actions,
+.game-statusbar,
+.game-board-card,
+.quick-tools,
+.number-dock {
+  min-width: 0;
+}
+
+.brand h1,
+.brand p,
+.section-title,
+.difficulty-profile,
+.generator-status-copy,
+.help,
+.dialog-card {
+  overflow-wrap: anywhere;
+}
+
+/*
+  In game mode the app itself already owns the viewport height.
+  Using another 100dvh on the nested game view made desktop/tablet
+  layouts taller than the available content box whenever .app had padding.
+*/
+body.game-mode {
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 0;
+}
+
+body.game-mode .app {
+  height: 100vh;
+  height: 100dvh;
+  min-height: 0;
+}
+
+.game-view {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  max-height: 100%;
+  grid-template-rows:
+    clamp(36px, 6.5dvh, 44px)
+    clamp(30px, 5.5dvh, 39px)
+    minmax(0, 1fr)
+    clamp(44px, 9dvh, 60px)
+    clamp(40px, 8dvh, 54px);
+  gap: clamp(2px, 0.7dvh, 5px);
+}
+
+.game-header {
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  min-height: 0;
+  height: 100%;
+}
+
+.game-header-button {
+  width: clamp(36px, 6.5dvh, 44px);
+  height: clamp(36px, 6.5dvh, 44px);
+  min-height: 0;
+}
+
+.game-statusbar,
+.game-statusbar .status-item,
+.quick-tools,
+.quick-tool-button,
+.number-dock,
+.game-view .numbers,
+.game-view .number-btn {
+  min-height: 0;
+}
+
+.game-statusbar,
+.quick-tools,
+.number-dock,
+.game-view .numbers {
+  height: 100%;
+}
+
+.game-statusbar .status-item,
+.quick-tool-button,
+.game-view .number-btn {
+  height: 100%;
+}
+
+.quick-tool-button .quick-icon {
+  font-size: clamp(18px, 3.7dvh, 25px);
+}
+
+.game-view .number-btn {
+  font-size: clamp(22px, 5.4dvh, 38px);
+}
+
+.game-board-card {
+  container-type: size;
+  min-width: 0;
+  min-height: 0;
+}
+
+/* Fit the square board to whichever dimension is actually smaller. */
+@supports (width: 1cqw) {
+  .game-board-card .board-stage {
+    width: min(100cqw, 100cqh, 640px);
+    height: min(100cqw, 100cqh, 640px);
+    max-width: none;
+    max-height: none;
+  }
+}
+
+/* Dialogs must remain usable inside short browser windows / itch.io embeds. */
+.dialog-shell {
+  max-width: calc(100% - 16px);
+  max-height: calc(100vh - 16px);
+  max-height: calc(100dvh - 16px);
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
+.dialog-card {
+  max-width: 100%;
+  padding: clamp(14px, 3vw, 22px);
+}
+
+@media (max-width: 420px) {
+  .brand-row {
+    flex-wrap: wrap;
+  }
+
+  .brand {
+    flex: 1 1 220px;
+  }
+
+  .brand-actions {
+    margin-left: auto;
+  }
+
+  .mode-btn,
+  .game-type-switch button,
+  .difficulty button,
+  .tool-btn,
+  .number-btn,
+  .secondary-btn,
+  .new-btn,
+  .dialog-primary,
+  .dialog-secondary,
+  .dialog-danger {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 340px) {
+  .app {
+    padding-right: 4px;
+    padding-left: 4px;
+  }
+
+  .brand-row {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+
+  .brand-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .game-view {
+    padding-right: 3px;
+    padding-left: 3px;
+  }
+
+  .game-header-title strong {
+    font-size: 15px;
+  }
+
+  .game-statusbar .status-item {
+    gap: 3px;
+    padding-right: 1px;
+    padding-left: 1px;
+  }
+
+  .game-statusbar .status-item span {
+    font-size: 10px;
+  }
+
+  .game-statusbar .status-item strong {
+    font-size: 11px;
+  }
+
+  .game-view .board-stage {
+    grid-template-columns: 20px minmax(0, 1fr);
+    grid-template-rows: 20px minmax(0, 1fr);
+  }
+
+  .game-view .sandwich-clue {
+    font-size: 8px;
+  }
+}
+
+/* Extra compression for unusually short portrait windows. */
+@media (orientation: portrait) and (max-height: 540px) {
+  .game-view {
+    grid-template-rows: 36px 30px minmax(0, 1fr) 44px 40px;
+    gap: 2px;
+  }
+
+  .game-header-button {
+    width: 36px;
+    height: 36px;
+  }
+
+  .quick-tool-button {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    font-size: 9px;
+  }
+
+  .quick-tool-button .quick-icon {
+    font-size: 18px;
+  }
+
+  .game-view .number-btn {
+    font-size: 22px;
+  }
+}
+
+/*
+  Short landscape screens get a two-column game layout:
+  board on the left, tools + a 3x3 number pad on the right.
+  This avoids shrinking the Sudoku board just to preserve a portrait stack.
+*/
+@media (orientation: landscape) and (max-height: 620px) and (min-width: 600px) {
+  body.game-mode .app {
+    width: min(100%, 1100px);
+    padding: 4px 6px;
+  }
+
+  .game-view {
+    grid-template-columns: minmax(0, 1fr) clamp(210px, 32vw, 300px);
+    grid-template-rows: 36px 30px minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-areas:
+      "header header"
+      "status status"
+      "board tools"
+      "board numbers";
+    gap: 4px 6px;
+    padding: 4px;
+    border-radius: 10px;
+  }
+
+  .game-header {
+    grid-area: header;
+  }
+
+  .game-statusbar {
+    grid-area: status;
+  }
+
+  .game-board-card {
+    grid-area: board;
+  }
+
+  .quick-tools {
+    grid-area: tools;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .number-dock {
+    grid-area: numbers;
+  }
+
+  .game-view .numbers {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+    gap: 3px;
+  }
+
+  .quick-tool-button {
+    padding: 2px 1px;
+  }
+
+  .quick-tool-button .quick-icon {
+    font-size: clamp(18px, 5dvh, 23px);
+  }
+
+  .game-view .number-btn {
+    font-size: clamp(20px, 6dvh, 30px);
+  }
+}
+
 </style>
 </head>
 <body class="setup-mode">
