@@ -2098,318 +2098,7 @@ body.game-mode .app {
 
 
   <script>
-const VERIFIED_PUZZLES = {"beginner":[{"id":"sand-beg-dc20dc9877","puzzle":"040190603000036054800542719700619020080004000609203005400975100975060002060008507","solution":"542197683197836254836542719754619328283754961619283475428975136975361842361428597","rowClues":[0,0,0,0,6,0,12,21,19],"colClues":[27,16,13,28,7,12,4,22,8],"rowMask":[1,1,1,1,1,1,1,1,1],"colMask":[1,1,1,1,1,1,1,1,1],"givenCount":42,"clueCount":18,"nodes":40,"branches":0,"qualityScore":692,"source":"verified"},{"id":"sand-beg-95bc04ed5b","puzzle":"040009705308000040060200098506143070070562034034097026000600403480905610002438000","solution":"241389765398756241765214398526143879879562134134897526957621483483975612612438957","rowClues":[11,32,7,22,13,15,20,18,17],"colClues":[0,31,19,19,10,22,15,20,8],"rowMask":[1,1,1,1,1,1,1,1,1],"colMask":[1,1,1,1,1,1,1,1,1],"givenCount":42,"clueCount":18,"nodes":40,"branches":0,"qualityScore":692,"source":"verified"},{"id":"sand-beg-542b1e93bd","puzzle":"013007009025689100900034200050872006207306540009041002006715920000400000501020463","solution":"413257689725689134968134257154872396287396541639541872346715928892463715571928463","rowClues":[31,0,14,29,15,9,5,22,0],"colClues":[0,28,8,27,4,12,18,13,17],"rowMask":[1,1,1,1,1,1,1,1,1],"colMask":[1,1,1,1,1,1,1,1,1],"givenCount":42,"clueCount":18,"nodes":40,"branches":0,"qualityScore":692,"source":"verified"},{"id":"sand-beg-e77b3ff274","puzzle":"000038007700004030200700061000001040500642703624387100432005610007006320961403508","solution":"146238957795164832283759461378591246519642783624387195432875619857916324961423578","rowClues":[23,5,10,0,0,0,0,0,6],"colClues":[35,15,13,29,19,0,21,0,14],"rowMask":[1,1,1,1,1,1,1,1,1],"colMask":[1,1,1,1,1,1,1,1,1],"givenCount":42,"clueCount":18,"nodes":40,"branches":1,"qualityScore":694,"source":"verified"},{"id":"sand-beg-ba7a14b5d9","puzzle":"003700089002590060009430012946310208000280906050000370600152004100800630890673100","solution":"463721589712598463589436712946317258371285946258964371637152894125849637894673125","rowClues":[13,7,20,13,15,20,15,19,20],"colClues":[11,29,6,0,3,32,17,16,19],"rowMask":[1,1,1,1,1,1,1,1,1],"colMask":[1,1,1,1,1,1,1,1,1],"givenCount":42,"clueCount":18,"nodes":40,"branches":2,"qualityScore":696,"source":"verified"}],"advanced":[{"id":"sand-adv-b6ff888e2d","puzzle":"001950836090000074060001200036784015000000000100326000903000500000105390400093700","solution":"741952836592638174368471259236784915874519623159326487923867541687145392415293768","rowClues":[0,19,7,0,0,5,35,12,7],"colClues":[0,31,20,33,12,4,2,14,15],"rowMask":[0,1,1,1,0,1,1,1,1],"colMask":[1,1,0,0,1,1,1,1,1],"givenCount":34,"clueCount":14,"nodes":49,"branches":2,"qualityScore":804,"source":"verified"},{"id":"sand-adv-366a0d2b63","puzzle":"004007089800002507170809030208000000000284370753010004080500760000090050030601000","solution":"324157689896342517175869432248735196961284375753916824489523761617498253532671948","rowClues":[26,20,26,0,6,0,23,11,0],"colClues":[2,30,3,20,2,26,20,3,24],"rowMask":[0,1,1,0,1,1,1,1,1],"colMask":[1,1,1,1,1,1,1,0,0],"givenCount":34,"clueCount":14,"nodes":48,"branches":4,"qualityScore":805,"source":"verified"},{"id":"sand-adv-d5ea1f7cba","puzzle":"007020540800465003000701892000576309600000084300800000000050701000007938700300020","solution":"137928546829465173564731892248576319675193284391842657983254761452617938716389425","rowClues":[10,15,8,0,0,0,35,7,17],"colClues":[24,13,17,16,9,22,26,0,11],"rowMask":[0,1,1,1,1,1,1,1,0],"colMask":[1,0,1,0,1,1,1,1,1],"givenCount":34,"clueCount":14,"nodes":48,"branches":1,"qualityScore":799,"source":"verified"},{"id":"sand-adv-504b48eaf5","puzzle":"400010000026730090090008370730180000010042037200057809000093001300000040080076050","solution":"473915628826734195591268374735189462918642537264357819647593281359821746182476953","rowClues":[0,0,0,8,0,0,13,10,27],"colClues":[11,3,24,9,26,12,29,16,0],"rowMask":[1,0,1,1,1,0,1,1,1],"colMask":[1,1,1,1,1,0,1,1,0],"givenCount":34,"clueCount":14,"nodes":48,"branches":1,"qualityScore":799,"source":"verified"},{"id":"sand-adv-31958686c8","puzzle":"008050700500010829007000450003000000056080042819040600071008060605100000082560090","solution":"298453716534716829167829453423675981756981342819342675971238564645197238382564197","rowClues":[27,16,23,8,8,0,7,0,0],"colClues":[19,16,0,5,24,5,16,35,3],"rowMask":[1,1,0,1,1,0,1,1,1],"colMask":[0,1,1,1,0,1,1,1,1],"givenCount":34,"clueCount":14,"nodes":53,"branches":7,"qualityScore":825,"source":"verified"}],"expert":[{"id":"sand-exp-2eefb8e082","puzzle":"406080002080500000075030001000700000040806200000000006892400013700003000060208000","solution":"436981752189572364275634891618729435543816279927345186892457613754163928361298547","rowClues":[8,8,0,17,15,21,24,9,2],"colClues":[13,6,29,33,15,6,6,18,5],"rowMask":[1,1,1,0,1,0,0,0,1],"colMask":[1,1,0,0,1,0,0,1,1],"givenCount":27,"clueCount":10,"nodes":180,"branches":29,"qualityScore":1120,"source":"verified"},{"id":"sand-exp-5edc945a09","puzzle":"003000000086147000000090608300000000750000069090008000100000986009705400000600017","solution":"923856741586147392417293658341962875758431269692578134175324986869715423234689517","rowClues":[35,14,9,0,8,22,21,7,5],"colClues":[25,9,15,2,18,17,0,31,15],"rowMask":[1,0,0,1,0,1,1,0,1],"colMask":[0,0,1,1,1,0,1,1,0],"givenCount":27,"clueCount":10,"nodes":246,"branches":44,"qualityScore":1195,"source":"verified"},{"id":"sand-exp-c04218acc1","puzzle":"346000725009000003027000980000300000001040008060129000654000000000000009930200000","solution":"346918725189752643527634981475386192291547368863129574654893217712465839938271456","rowClues":[0,8,8,0,0,2,5,28,20],"colClues":[32,11,12,21,22,8,0,13,21],"rowMask":[1,0,1,0,1,1,0,0,1],"colMask":[0,0,0,1,1,1,1,0,1],"givenCount":27,"clueCount":10,"nodes":155,"branches":19,"qualityScore":1079,"source":"verified"},{"id":"sand-exp-dd30cf5b21","puzzle":"402005600500601090006290000010040900250003840000000003000408000000000028020530000","solution":"492375681573681294186294375317846952259713846648952713761428539935167428824539167","rowClues":[31,2,16,25,7,14,22,8,0],"colClues":[18,15,8,4,4,30,24,16,20],"rowMask":[1,1,1,0,0,1,0,0,1],"colMask":[0,1,1,0,1,0,0,1,1],"givenCount":27,"clueCount":10,"nodes":68,"branches":12,"qualityScore":947,"source":"verified"},{"id":"sand-exp-96f8638a8a","puzzle":"097012008000800000003060014001205003025080100800700000000000006058009001309000000","solution":"697412358142853769583967214971245683425386197836791542714528936258639471369174825","rowClues":[11,35,15,7,0,0,19,11,0],"colClues":[5,24,23,23,23,8,5,8,22],"rowMask":[1,0,0,0,1,1,0,1,1],"colMask":[1,0,1,0,1,0,1,1,0],"givenCount":27,"clueCount":10,"nodes":94,"branches":17,"qualityScore":1003,"source":"verified"}],"impossible":[{"id":"sand-imp-bae75774c8","puzzle":"008000000620005800000900000000000000500001030800000005000000000000050080000089601","solution":"918627543627345819345918726732594168594861237861732495489176352176253984253489671","rowClues":[0,0,0,4,18,16,0,23,13],"colClues":[33,9,0,20,0,11,9,11,32],"rowMask":[1,0,0,1,0,0,0,1,0],"colMask":[1,1,0,0,0,0,0,1,0],"givenCount":17,"clueCount":6,"nodes":198011,"branches":75489,"qualityScore":153138,"source":"verified"},{"id":"sand-imp-a21cdbeda8","puzzle":"000000000000008050047060000003000000000005020008000310400000600070080000006900000","solution":"982754163631298754547163298153826479794315826268479315429537681375681942816942537","rowClues":[26,2,11,35,7,3,29,0,6],"colClues":[11,15,22,26,8,7,30,9,11],"rowMask":[0,1,1,1,0,0,0,0,0],"colMask":[0,0,1,1,0,0,0,0,1],"givenCount":17,"clueCount":6,"nodes":30482,"branches":10678,"qualityScore":23246,"source":"verified"},{"id":"sand-imp-2237e6aee8","puzzle":"070008000500700060000000070200000004000000005004020000000000902000400000006000840","solution":"179648523523719468468253179295871634781364295634925781847536912912487356356192847","rowClues":[7,0,7,20,15,22,0,0,0],"colClues":[32,15,16,9,31,3,15,8,9],"rowMask":[0,0,1,1,0,0,1,0,0],"colMask":[0,0,1,0,1,0,0,1,0],"givenCount":17,"clueCount":6,"nodes":14897,"branches":5834,"qualityScore":13454,"source":"verified"},{"id":"sand-imp-9086e7b0e9","puzzle":"000000805000100000500204000070000000002009150600000000000000480080070000000000002","solution":"429367815736185924518294637973516248842739156651428379297653481184972563365841792","rowClues":[24,13,10,15,0,24,33,12,7],"colClues":[16,16,19,24,0,13,8,35,0],"rowMask":[0,0,0,1,0,0,0,1,1],"colMask":[0,1,0,0,1,0,0,0,1],"givenCount":17,"clueCount":6,"nodes":97354,"branches":28493,"qualityScore":59043,"source":"verified"},{"id":"sand-imp-e6f22824ae","puzzle":"000050000000000052000609800000005060020000309000000008000510000400000600010000000","solution":"738251946649738152251649837973825461825164379164973528382516794497382615516497283","rowClues":[0,18,10,35,20,10,13,26,10],"colClues":[8,0,0,0,8,8,0,0,0],"rowMask":[0,0,1,0,1,0,1,0,0],"colMask":[1,0,0,0,0,1,1,0,0],"givenCount":17,"clueCount":6,"nodes":4723,"branches":1415,"qualityScore":4451,"source":"verified"}]};
-
-const GENERATOR_WORKER_SOURCE = String.raw`
-const ALL = 0x1ff;
-const CONFIG = {
-  beginner: { givens: 42, clueCount: 18, nodeLimit: 25000, attempts: 5, minNodes: 1, maxNodes: 220, minBranches: 0 },
-  advanced: { givens: 34, clueCount: 14, nodeLimit: 60000, attempts: 7, minNodes: 35, maxNodes: 1800, minBranches: 1 },
-  expert: { givens: 27, clueCount: 10, nodeLimit: 150000, attempts: 11, minNodes: 60, maxNodes: 15000, minBranches: 5 },
-  impossible: { givens: 17, clueCount: 6, nodeLimit: 300000, attempts: 18, minNodes: 1000, maxNodes: 300000, minBranches: 100 }
-};
-
-function mulberry32(seed) {
-  let value = seed >>> 0;
-  return function() {
-    value += 0x6D2B79F5;
-    let t = value;
-    t = Math.imul(t ^ (t >>> 15), t | 1);
-    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-  };
-}
-
-function shuffle(values, rng) {
-  const output = values.slice();
-  for (let i = output.length - 1; i > 0; i--) {
-    const j = Math.floor(rng() * (i + 1));
-    [output[i], output[j]] = [output[j], output[i]];
-  }
-  return output;
-}
-
-function generateSolution(rng) {
-  const base = 3;
-  const pattern = (row, col) => (base * (row % base) + Math.floor(row / base) + col) % 9;
-  const groups = shuffle([0, 1, 2], rng);
-  const rows = groups.flatMap(group => shuffle([0, 1, 2], rng).map(row => group * 3 + row));
-  const stacks = shuffle([0, 1, 2], rng);
-  const cols = stacks.flatMap(stack => shuffle([0, 1, 2], rng).map(col => stack * 3 + col));
-  const digits = shuffle([1, 2, 3, 4, 5, 6, 7, 8, 9], rng);
-  return rows.flatMap(row => cols.map(col => digits[pattern(row, col)]));
-}
-
-function sandwichSum(line) {
-  const first = line.indexOf(1);
-  const ninth = line.indexOf(9);
-  const low = Math.min(first, ninth);
-  const high = Math.max(first, ninth);
-  let sum = 0;
-  for (let index = low + 1; index < high; index++) sum += line[index];
-  return sum;
-}
-
-function calculateClues(solution) {
-  return {
-    rowClues: Array.from({ length: 9 }, (_, row) => sandwichSum(solution.slice(row * 9, row * 9 + 9))),
-    colClues: Array.from({ length: 9 }, (_, col) => sandwichSum(Array.from({ length: 9 }, (_, row) => solution[row * 9 + col])))
-  };
-}
-
-function chooseMasks(rng, clueCount) {
-  if (clueCount === 18) return { rowMask: Array(9).fill(1), colMask: Array(9).fill(1) };
-  const rowCount = Math.floor(clueCount / 2);
-  const colCount = clueCount - rowCount;
-  const rows = new Set(shuffle([0,1,2,3,4,5,6,7,8], rng).slice(0, rowCount));
-  const cols = new Set(shuffle([0,1,2,3,4,5,6,7,8], rng).slice(0, colCount));
-  return {
-    rowMask: Array.from({ length: 9 }, (_, index) => rows.has(index) ? 1 : 0),
-    colMask: Array.from({ length: 9 }, (_, index) => cols.has(index) ? 1 : 0)
-  };
-}
-
-const subsetCache = new Map();
-function subsetPossible(digits, count, target) {
-  if (count < 0 || target < 0 || digits.length < count) return false;
-  if (count === 0) return target === 0;
-  const key = digits.join("") + ":" + count + ":" + target;
-  if (subsetCache.has(key)) return subsetCache.get(key);
-  let result = false;
-  const combinations = 1 << digits.length;
-  for (let mask = 0; mask < combinations && !result; mask++) {
-    let bits = 0;
-    let sum = 0;
-    for (let index = 0; index < digits.length; index++) {
-      if (mask & (1 << index)) {
-        bits++;
-        sum += digits[index];
-      }
-    }
-    if (bits === count && sum === target) result = true;
-  }
-  subsetCache.set(key, result);
-  if (subsetCache.size > 25000) subsetCache.clear();
-  return result;
-}
-
-const lineCache = new Map();
-function lineFeasible(line, clue) {
-  const cacheKey = line.join("") + ":" + clue;
-  if (lineCache.has(cacheKey)) return lineCache.get(cacheKey);
-  const pos1 = line.indexOf(1);
-  const pos9 = line.indexOf(9);
-  const used = new Set(line.filter(Boolean));
-  const missing = [];
-  for (let digit = 1; digit <= 9; digit++) if (!used.has(digit)) missing.push(digit);
-  const possible1 = pos1 >= 0 ? [pos1] : line.map((value, index) => value === 0 ? index : -1).filter(index => index >= 0);
-  const possible9 = pos9 >= 0 ? [pos9] : line.map((value, index) => value === 0 ? index : -1).filter(index => index >= 0);
-  let feasible = false;
-
-  outer:
-  for (const first of possible1) {
-    for (const ninth of possible9) {
-      if (first === ninth) continue;
-      if (![0, 1].includes(line[first]) || ![0, 9].includes(line[ninth])) continue;
-      const low = Math.min(first, ninth);
-      const high = Math.max(first, ninth);
-      let assignedSum = 0;
-      let emptyInside = 0;
-      for (let index = low + 1; index < high; index++) {
-        const value = line[index];
-        if (value === 1 || value === 9) continue outer;
-        if (value === 0) emptyInside++;
-        else assignedSum += value;
-      }
-      const remaining = missing.filter(digit => digit !== 1 && digit !== 9);
-      if (subsetPossible(remaining, emptyInside, clue - assignedSum)) {
-        feasible = true;
-        break outer;
-      }
-    }
-  }
-
-  lineCache.set(cacheKey, feasible);
-  if (lineCache.size > 50000) lineCache.clear();
-  return feasible;
-}
-
-function countSolutions(puzzle, rowClues, colClues, rowMask, colMask, nodeLimit, deadline) {
-  const board = puzzle.slice();
-  const rowUsed = Array(9).fill(0);
-  const colUsed = Array(9).fill(0);
-  const boxUsed = Array(9).fill(0);
-  const stats = { nodes: 0, branches: 0, maxDepth: 0, aborted: false };
-  let count = 0;
-
-  for (let index = 0; index < 81; index++) {
-    const value = board[index];
-    if (!value) continue;
-    const row = Math.floor(index / 9);
-    const col = index % 9;
-    const box = Math.floor(row / 3) * 3 + Math.floor(col / 3);
-    const mask = 1 << (value - 1);
-    if ((rowUsed[row] | colUsed[col] | boxUsed[box]) & mask) return { count: 0, stats };
-    rowUsed[row] |= mask;
-    colUsed[col] |= mask;
-    boxUsed[box] |= mask;
-  }
-
-  const rowOkay = row => !rowMask[row] || lineFeasible(board.slice(row * 9, row * 9 + 9), rowClues[row]);
-  const colOkay = col => !colMask[col] || lineFeasible(Array.from({ length: 9 }, (_, row) => board[row * 9 + col]), colClues[col]);
-  for (let line = 0; line < 9; line++) if (!rowOkay(line) || !colOkay(line)) return { count: 0, stats };
-
-  function search(depth) {
-    if (count >= 2 || stats.aborted) return;
-    stats.nodes++;
-    stats.maxDepth = Math.max(stats.maxDepth, depth);
-    if (stats.nodes > nodeLimit || (stats.nodes & 255) === 0 && Date.now() > deadline) {
-      stats.aborted = true;
-      return;
-    }
-
-    let bestIndex = -1;
-    let bestMask = 0;
-    let bestCount = 10;
-    for (let index = 0; index < 81; index++) {
-      if (board[index]) continue;
-      const row = Math.floor(index / 9);
-      const col = index % 9;
-      const box = Math.floor(row / 3) * 3 + Math.floor(col / 3);
-      const mask = ALL & ~(rowUsed[row] | colUsed[col] | boxUsed[box]);
-      let candidateCount = 0;
-      for (let bits = mask; bits; bits &= bits - 1) candidateCount++;
-      if (candidateCount === 0) return;
-      if (candidateCount < bestCount) {
-        bestIndex = index;
-        bestMask = mask;
-        bestCount = candidateCount;
-        if (candidateCount === 1) break;
-      }
-    }
-
-    if (bestIndex < 0) {
-      count++;
-      return;
-    }
-
-    if (bestCount > 1) stats.branches++;
-    const row = Math.floor(bestIndex / 9);
-    const col = bestIndex % 9;
-    const box = Math.floor(row / 3) * 3 + Math.floor(col / 3);
-    for (let mask = bestMask; mask && count < 2 && !stats.aborted; mask &= mask - 1) {
-      const candidateBit = mask & -mask;
-      const value = 32 - Math.clz32(candidateBit);
-      board[bestIndex] = value;
-      rowUsed[row] |= candidateBit;
-      colUsed[col] |= candidateBit;
-      boxUsed[box] |= candidateBit;
-      if (rowOkay(row) && colOkay(col)) search(depth + 1);
-      rowUsed[row] ^= candidateBit;
-      colUsed[col] ^= candidateBit;
-      boxUsed[box] ^= candidateBit;
-      board[bestIndex] = 0;
-    }
-  }
-
-  search(0);
-  return { count, stats };
-}
-
-function digPuzzle(solution, rowClues, colClues, rowMask, colMask, config, rng, deadline) {
-  const board = solution.slice();
-  const positions = shuffle(Array.from({ length: 81 }, (_, index) => index), rng);
-  let givens = 81;
-  for (const index of positions) {
-    if (givens <= config.givens || Date.now() > deadline) break;
-    const previous = board[index];
-    board[index] = 0;
-    const result = countSolutions(board, rowClues, colClues, rowMask, colMask, config.nodeLimit, deadline);
-    if (result.count === 1 && !result.stats.aborted) givens--;
-    else board[index] = previous;
-  }
-  const finalResult = countSolutions(board, rowClues, colClues, rowMask, colMask, config.nodeLimit, deadline);
-  return { board, givens, finalResult };
-}
-
-function qualityScore(givens, clueCount, stats) {
-  return Math.round(
-    Math.log2(stats.nodes + 1) * 100 +
-    Math.log2(stats.branches + 1) * 60 +
-    (81 - givens) * 4 +
-    (18 - clueCount) * 12
-  );
-}
-
-function hashText(text) {
-  let hash = 2166136261;
-  for (let index = 0; index < text.length; index++) {
-    hash ^= text.charCodeAt(index);
-    hash = Math.imul(hash, 16777619);
-  }
-  return (hash >>> 0).toString(16).padStart(8, "0");
-}
-
-function acceptable(config, stats) {
-  return !stats.aborted && stats.nodes >= config.minNodes && stats.nodes <= config.maxNodes && stats.branches >= config.minBranches;
-}
-
-function generatePuzzle(difficulty, seed) {
-  const config = CONFIG[difficulty];
-  if (!config) throw new Error("unsupported difficulty");
-  const deadline = Date.now() + (difficulty === "impossible" ? 14000 : 8000);
-  const rng = mulberry32(seed >>> 0);
-
-  for (let attempt = 1; attempt <= config.attempts && Date.now() < deadline; attempt++) {
-    lineCache.clear();
-    subsetCache.clear();
-    const solution = generateSolution(rng);
-    const clues = calculateClues(solution);
-    const masks = chooseMasks(rng, config.clueCount);
-    const dug = digPuzzle(solution, clues.rowClues, clues.colClues, masks.rowMask, masks.colMask, config, rng, deadline);
-    const stats = dug.finalResult.stats;
-    if (
-      dug.givens === config.givens &&
-      dug.finalResult.count === 1 &&
-      acceptable(config, stats)
-    ) {
-      const puzzle = dug.board.join("");
-      const solutionText = solution.join("");
-      const signature = difficulty + puzzle + masks.rowMask.join("") + masks.colMask.join("");
-      return {
-        id: "sand-gen-" + difficulty.slice(0, 3) + "-" + hashText(signature),
-        seed: seed >>> 0,
-        difficulty,
-        puzzle,
-        solution: solutionText,
-        rowClues: clues.rowClues,
-        colClues: clues.colClues,
-        rowMask: masks.rowMask,
-        colMask: masks.colMask,
-        givenCount: dug.givens,
-        clueCount: config.clueCount,
-        nodes: stats.nodes,
-        branches: stats.branches,
-        qualityScore: qualityScore(dug.givens, config.clueCount, stats),
-        source: "generated",
-        generatorVersion: "1.0.0"
-      };
-    }
-  }
-  return null;
-}
-
-self.onmessage = event => {
-  const message = event.data || {};
-  if (message.type !== "generate") return;
-  try {
-    const puzzle = generatePuzzle(message.difficulty, message.seed || Date.now());
-    self.postMessage({ type: puzzle ? "generated" : "failed", difficulty: message.difficulty, puzzle });
-  } catch (error) {
-    self.postMessage({ type: "failed", difficulty: message.difficulty, error: String(error && error.message || error) });
-  }
-};
-`;
+const VERIFIED_PUZZLES = { beginner: [], advanced: [], expert: [], impossible: [] };
 
 const difficultyNames = {
   beginner: "Beginner",
@@ -2481,6 +2170,7 @@ const STORAGE_SOUND = "sudoku-v6-sound";
 const STORAGE_BGM = "sudoku-v7-bgm";
 const STORAGE_GENERATED_POOL = "sudoku-v8-generated-pool";
 const STORAGE_RECENT_PUZZLES = "sudoku-v8-recent-puzzles";
+const SECURE_API_URL = "https://hdpufuocyxozrsmlpmjf.supabase.co/functions/v1/sudoku-api";
 const GENERATED_POOL_TARGET = 4;
 const GENERATED_POOL_MAX = 8;
 
@@ -2544,7 +2234,7 @@ const gameType = "sandwich";
 let difficulty = "beginner";
 let puzzleIndex = 0;
 let puzzle = "";
-let solution = "";
+
 let values = Array(81).fill("0");
 let notes = Array.from({ length: 81 }, () => []);
 let selectedIndex = null;
@@ -2563,17 +2253,13 @@ let colClues = [];
 let activeRowMask = [...DIFFICULTY_RULES.beginner.rowMask];
 let activeColMask = [...DIFFICULTY_RULES.beginner.colMask];
 let currentPuzzleId = "";
-let currentPuzzleSource = "verified";
+let currentPuzzleSource = "secure-server";
 let currentQualityScore = 0;
 let currentGivenCount = 0;
 let currentClueCount = 0;
-let generatedPool = loadGeneratedPool();
-let recentPuzzleIds = loadRecentPuzzleIds();
-let generatorWorker = null;
-let generatorBusy = false;
-let generatorDifficulty = null;
-let generatorState = "starting";
-let generationCursor = 0;
+let currentSessionId = "";
+let validationInFlight = false;
+let generatorState = "secure";
 let soundEnabled = localStorage.getItem(STORAGE_SOUND) !== "off";
 let bgmEnabled = localStorage.getItem(STORAGE_BGM) !== "off";
 let audioContext = null;
@@ -2589,307 +2275,64 @@ function validMask(mask) {
     mask.every(value => value === 0 || value === 1);
 }
 
-function normalizePuzzleItem(item, fallbackDifficulty = difficulty) {
-  if (!item || typeof item !== "object") return null;
-  if (typeof item.puzzle !== "string" || !/^[0-9]{81}$/.test(item.puzzle)) return null;
-  if (typeof item.solution !== "string" || !/^[1-9]{81}$/.test(item.solution)) return null;
 
-  for (let index = 0; index < 81; index++) {
-    if (item.puzzle[index] !== "0" && item.puzzle[index] !== item.solution[index]) return null;
-  }
-
-  const itemDifficulty = difficultyNames[item.difficulty] ? item.difficulty : fallbackDifficulty;
-  const fallbackRules = DIFFICULTY_RULES[itemDifficulty];
-  const normalized = {
-    id: typeof item.id === "string" && item.id ? item.id : `legacy-${itemDifficulty}-${item.puzzle.slice(0, 12)}`,
-    difficulty: itemDifficulty,
-    puzzle: item.puzzle,
-    solution: item.solution,
-    rowClues: Array.isArray(item.rowClues) && item.rowClues.length === 9 ? item.rowClues.map(Number) : null,
-    colClues: Array.isArray(item.colClues) && item.colClues.length === 9 ? item.colClues.map(Number) : null,
-    rowMask: validMask(item.rowMask) ? item.rowMask.map(Number) : [...fallbackRules.rowMask],
-    colMask: validMask(item.colMask) ? item.colMask.map(Number) : [...fallbackRules.colMask],
-    givenCount: Number(item.givenCount) || [...item.puzzle].filter(value => value !== "0").length,
-    clueCount: Number(item.clueCount) || 0,
-    nodes: Number(item.nodes) || 0,
-    branches: Number(item.branches) || 0,
-    qualityScore: Number(item.qualityScore) || 0,
-    source: item.source === "generated" ? "generated" : "verified",
-    seed: Number(item.seed) || null,
-    generatorVersion: item.generatorVersion || null
-  };
-
-  normalized.clueCount ||= normalized.rowMask.reduce((sum, value) => sum + value, 0) +
-    normalized.colMask.reduce((sum, value) => sum + value, 0);
-
-  return normalized;
-}
-
-function emptyGeneratedPool() {
-  return { beginner: [], advanced: [], expert: [], impossible: [] };
-}
-
-function loadGeneratedPool() {
-  const empty = emptyGeneratedPool();
+async function secureRequest(action, payload = {}) {
+  const controller = new AbortController();
+  const timer = window.setTimeout(() => controller.abort(), 12000);
   try {
-    const saved = JSON.parse(localStorage.getItem(STORAGE_GENERATED_POOL));
-    if (!saved || typeof saved !== "object") return empty;
-
-    Object.keys(empty).forEach(level => {
-      const items = Array.isArray(saved[level]) ? saved[level] : [];
-      empty[level] = items
-        .map(item => normalizePuzzleItem(item, level))
-        .filter(Boolean)
-        .filter(item => item.difficulty === level)
-        .slice(-GENERATED_POOL_MAX);
+    const response = await fetch(SECURE_API_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      cache: "no-store",
+      signal: controller.signal,
+      body: JSON.stringify({ action, ...payload })
     });
-    return empty;
-  } catch {
-    return empty;
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok) {
+      const error = new Error(data.error || `HTTP ${response.status}`);
+      error.code = data.error || "request_failed";
+      throw error;
+    }
+    return data;
+  } finally {
+    window.clearTimeout(timer);
   }
 }
 
-function saveGeneratedPool() {
-  try {
-    localStorage.setItem(STORAGE_GENERATED_POOL, JSON.stringify(generatedPool));
-  } catch {
-    Object.keys(generatedPool).forEach(level => {
-      generatedPool[level] = generatedPool[level].slice(-Math.max(2, Math.floor(GENERATED_POOL_MAX / 2)));
-    });
-    try {
-      localStorage.setItem(STORAGE_GENERATED_POOL, JSON.stringify(generatedPool));
-    } catch {}
-  }
-}
-
-function loadRecentPuzzleIds() {
-  try {
-    const saved = JSON.parse(localStorage.getItem(STORAGE_RECENT_PUZZLES));
-    return Array.isArray(saved) ? saved.filter(value => typeof value === "string").slice(-12) : [];
-  } catch {
-    return [];
-  }
-}
-
-function rememberPuzzleId(id) {
-  recentPuzzleIds = recentPuzzleIds.filter(value => value !== id);
-  recentPuzzleIds.push(id);
-  recentPuzzleIds = recentPuzzleIds.slice(-12);
-  localStorage.setItem(STORAGE_RECENT_PUZZLES, JSON.stringify(recentPuzzleIds));
-}
-
-function verifiedItems(level) {
-  return (VERIFIED_PUZZLES[level] || [])
-    .map(item => normalizePuzzleItem({ ...item, difficulty: level, source: "verified" }, level))
-    .filter(Boolean);
-}
-
-function generatedItems(level) {
-  return (generatedPool[level] || [])
-    .map(item => normalizePuzzleItem(item, level))
-    .filter(Boolean);
-}
-
-function choosePuzzle(level) {
-  const verified = verifiedItems(level);
-  const generated = generatedItems(level);
-  const all = [...generated, ...verified];
-  if (!all.length) throw new Error(`No ${level} puzzle is available`);
-
-  let candidates = all.filter(item => !recentPuzzleIds.includes(item.id));
-  if (!candidates.length) candidates = all;
-
-  const generatedCandidates = candidates.filter(item => item.source === "generated");
-  const selectionPool =
-    generatedCandidates.length && Math.random() < 0.7
-      ? generatedCandidates
-      : candidates;
-
-  const selected = selectionPool[Math.floor(Math.random() * selectionPool.length)];
-  rememberPuzzleId(selected.id);
-  return selected;
-}
-
-function sourceLabel(source) {
-  return source === "generated" ? "Background Generated" : "Built-in Verified Pool";
+function sourceLabel() {
+  return "Secure server session";
 }
 
 function qualityLabel(score) {
   if (score >= 2200) return "Extreme";
   if (score >= 1150) return "Advanced";
   if (score >= 820) return "Intermediate";
-  return "Basic";
+  return "Base";
 }
 
 function updatePuzzleMeta() {
   if (!puzzleMetaTextEl) return;
   puzzleMetaTextEl.textContent =
-    `${sourceLabel(currentPuzzleSource)} · ${currentGivenCount} givens · ` +
-    `${currentClueCount} outside clues · generator score ${currentQualityScore || "—"} (${qualityLabel(currentQualityScore)})`;
-}
-
-function generatedCount(level = difficulty) {
-  return generatedItems(level).length;
-}
-
-function totalGeneratedCount() {
-  return Object.keys(generatedPool).reduce((sum, level) => sum + generatedCount(level), 0);
+    `Secure server · ${currentGivenCount} givens · ${currentClueCount} outside clues · score ${currentQualityScore || "—"} (${qualityLabel(currentQualityScore)})`;
 }
 
 function updateGeneratorStatus() {
-  const levelCount = generatedCount(difficulty);
-  const total = totalGeneratedCount();
-
-  generatorStatusEl.classList.remove("busy", "ready", "fallback");
-
-  if (generatorState === "unsupported" || generatorState === "error") {
-    generatorStatusEl.classList.add("fallback");
-    generatorStatusTitleEl.textContent = "Verified Puzzle Pool Ready";
-    generatorStatusTextEl.textContent = "This browser cannot start the background generator. The game will continue using random puzzles from the built-in verified pool.";
-    return;
-  }
-
-  if (generatorBusy) {
-    generatorStatusEl.classList.add("busy");
-    generatorStatusTitleEl.textContent = `Generating ${difficultyNames[generatorDifficulty]} puzzles in the background`;
-    generatorStatusTextEl.textContent =
-      `${difficultyNames[difficulty]} currently has ${levelCount} background-generated puzzle(s); you can play immediately while more are generated.`;
-    return;
-  }
-
+  generatorStatusEl.classList.remove("busy", "fallback");
   generatorStatusEl.classList.add("ready");
-  generatorStatusTitleEl.textContent = "Hybrid Puzzle Pool Enabled";
-  generatorStatusTextEl.textContent =
-    `Built-in verified puzzles are ready to play; ${total} background-generated puzzle(s) are saved locally, ` +
-    `${difficultyNames[difficulty]} currently has ${levelCount}.`;
+  generatorStatusTitleEl.textContent = "Secure validation enabled";
+  generatorStatusTextEl.textContent = "The full answer stays on the server. The browser receives only the puzzle, outside clues, and a one-game session ID.";
 }
 
-function isGeneratedPuzzleAcceptable(item, level) {
-  const normalized = normalizePuzzleItem(item, level);
-  if (!normalized || normalized.source !== "generated") return null;
-
-  const expected = {
-    beginner: { givens: 42, clues: 18, minScore: 600 },
-    advanced: { givens: 34, clues: 14, minScore: 800 },
-    expert: { givens: 27, clues: 10, minScore: 1050 },
-    impossible: { givens: 17, clues: 6, minScore: 2000 }
-  }[level];
-
-  if (!expected) return null;
-  if (normalized.givenCount !== expected.givens) return null;
-  if (normalized.clueCount !== expected.clues) return null;
-  if (normalized.qualityScore < expected.minScore) return null;
-  return normalized;
-}
-
-function nextGenerationDifficulty() {
-  const order = [difficulty, "beginner", "advanced", "expert", "impossible"]
-    .filter((value, index, array) => array.indexOf(value) === index);
-
-  for (let offset = 0; offset < order.length; offset++) {
-    const index = (generationCursor + offset) % order.length;
-    const level = order[index];
-    if (generatedCount(level) < GENERATED_POOL_TARGET) {
-      generationCursor = (index + 1) % order.length;
-      return level;
-    }
-  }
-  return null;
-}
-
-function requestBackgroundPuzzle(preferredLevel = null) {
-  if (!generatorWorker || generatorBusy) return;
-
-  const level =
-    preferredLevel && generatedCount(preferredLevel) < GENERATED_POOL_TARGET
-      ? preferredLevel
-      : nextGenerationDifficulty();
-
-  if (!level) {
-    generatorState = "ready";
-    updateGeneratorStatus();
-    return;
-  }
-
-  generatorBusy = true;
-  generatorDifficulty = level;
-  generatorState = "working";
-  updateGeneratorStatus();
-
-  let seed = Date.now() ^ Math.floor(Math.random() * 0x7fffffff);
-  try {
-    const randomValues = new Uint32Array(1);
-    crypto.getRandomValues(randomValues);
-    seed ^= randomValues[0];
-  } catch {}
-
-  generatorWorker.postMessage({
-    type: "generate",
-    difficulty: level,
-    seed: seed >>> 0
-  });
-}
-
-function scheduleBackgroundGeneration(preferredLevel = null, delay = 300) {
-  window.setTimeout(() => requestBackgroundPuzzle(preferredLevel), delay);
-}
+function scheduleBackgroundGeneration() {}
 
 function startBackgroundGenerator() {
-  if (!("Worker" in window)) {
-    generatorState = "unsupported";
-    updateGeneratorStatus();
-    return;
-  }
+  generatorState = "secure";
+  updateGeneratorStatus();
+}
 
-  try {
-    const blob = new Blob([GENERATOR_WORKER_SOURCE], { type: "text/javascript" });
-    const workerUrl = URL.createObjectURL(blob);
-    generatorWorker = new Worker(workerUrl);
-    URL.revokeObjectURL(workerUrl);
-
-    generatorWorker.addEventListener("message", event => {
-      const message = event.data || {};
-      const completedLevel = message.difficulty || generatorDifficulty;
-      generatorBusy = false;
-      generatorDifficulty = null;
-
-      if (message.type === "generated") {
-        const puzzleItem = isGeneratedPuzzleAcceptable(message.puzzle, completedLevel);
-        if (puzzleItem) {
-          const existingIds = new Set(generatedPool[completedLevel].map(item => item.id));
-          if (!existingIds.has(puzzleItem.id)) {
-            generatedPool[completedLevel].push(puzzleItem);
-            generatedPool[completedLevel] = generatedPool[completedLevel].slice(-GENERATED_POOL_MAX);
-            saveGeneratedPool();
-          }
-          generatorState = "ready";
-        } else {
-          generatorState = "working";
-        }
-      } else {
-        generatorState = "working";
-      }
-
-      updateGeneratorStatus();
-      scheduleBackgroundGeneration(null, completedLevel === "impossible" ? 1200 : 350);
-    });
-
-    generatorWorker.addEventListener("error", () => {
-      generatorBusy = false;
-      generatorState = "error";
-      generatorWorker?.terminate();
-      generatorWorker = null;
-      updateGeneratorStatus();
-    });
-
-    generatorState = "ready";
-    updateGeneratorStatus();
-    scheduleBackgroundGeneration(difficulty, 500);
-  } catch {
-    generatorState = "unsupported";
-    generatorWorker = null;
-    updateGeneratorStatus();
-  }
+function clearInsecureLegacyData() {
+  localStorage.removeItem(STORAGE_GENERATED_POOL);
+  localStorage.removeItem(LEGACY_STORAGE_GAME);
 }
 
 function initNumberPad() {
@@ -2907,78 +2350,93 @@ function initNumberPad() {
   }
 }
 
-function newGame(nextPuzzle = false) {
-  const chosen = choosePuzzle(difficulty);
-  puzzleIndex = 0;
-  puzzle = chosen.puzzle;
-  solution = chosen.solution;
-  currentPuzzleId = chosen.id;
-  currentPuzzleSource = chosen.source;
-  currentQualityScore = chosen.qualityScore;
-  currentGivenCount = chosen.givenCount;
-  currentClueCount = chosen.clueCount;
-  activeRowMask = [...chosen.rowMask];
-  activeColMask = [...chosen.colMask];
-  rowClues = Array.isArray(chosen.rowClues) ? [...chosen.rowClues] : [];
-  colClues = Array.isArray(chosen.colClues) ? [...chosen.colClues] : [];
-  values = puzzle.split("");
-  notes = Array.from({ length: 81 }, () => []);
-  selectedIndex = null;
-  mistakes = 0;
-  hintsRemaining = DIFFICULTY_RULES[difficulty].hints;
-  seconds = 0;
-  inputMode = "number";
-  paused = false;
-  gameFinished = false;
-  validationRequested = false;
-  history = [];
-  future = [];
-  calculateSandwichClues();
 
-  updateControls();
-  renderAll();
-  restartTimer();
-  saveGame();
-  showToast(
-    `Started Sandwich Sudoku · ${difficultyNames[difficulty]} | ${sourceLabel(currentPuzzleSource)}`
-  );
-  syncBgmState();
-  scheduleBackgroundGeneration(difficulty, 700);
+async function newGame(nextPuzzle = false) {
+  startGameBtn.disabled = true;
+  startGameBtn.textContent = "Loading secure puzzle…";
+  try {
+    const chosen = await secureRequest("new", { difficulty });
+    puzzleIndex = 0;
+    puzzle = chosen.puzzle;
+    currentSessionId = chosen.sessionId;
+    currentPuzzleId = chosen.puzzleId || chosen.sessionId;
+    currentPuzzleSource = "secure-server";
+    currentQualityScore = Number(chosen.qualityScore) || 0;
+    currentGivenCount = Number(chosen.givenCount) || [...puzzle].filter(value => value !== "0").length;
+    currentClueCount = Number(chosen.clueCount) || 0;
+    activeRowMask = validMask(chosen.rowMask) ? chosen.rowMask.map(Number) : [...DIFFICULTY_RULES[difficulty].rowMask];
+    activeColMask = validMask(chosen.colMask) ? chosen.colMask.map(Number) : [...DIFFICULTY_RULES[difficulty].colMask];
+    rowClues = Array.isArray(chosen.rowClues) ? chosen.rowClues.map(Number) : [];
+    colClues = Array.isArray(chosen.colClues) ? chosen.colClues.map(Number) : [];
+    values = puzzle.split("");
+    notes = Array.from({ length: 81 }, () => []);
+    selectedIndex = null;
+    mistakes = 0;
+    hintsRemaining = Number.isInteger(chosen.hintsRemaining) ? chosen.hintsRemaining : DIFFICULTY_RULES[difficulty].hints;
+    seconds = 0;
+    inputMode = "number";
+    paused = currentView === "setup";
+    gameFinished = false;
+    validationRequested = false;
+    validationInFlight = false;
+    history = [];
+    future = [];
+    calculateSandwichClues();
+
+    updateControls();
+    renderAll();
+    restartTimer();
+    saveGame();
+    updateStartButton();
+    showToast(`Started Sandwich Sudoku · ${difficultyNames[difficulty]} | secure server puzzle`);
+    syncBgmState();
+  } catch (error) {
+    showToast("Could not reach the secure puzzle server. Please try again.");
+    playTone(150, .10, "square", .03);
+  } finally {
+    startGameBtn.disabled = false;
+    updateStartButton();
+  }
 }
 
-function loadSavedGame() {
-  try {
-    const savedText =
-      localStorage.getItem(STORAGE_GAME) ||
-      localStorage.getItem(LEGACY_STORAGE_GAME);
-    const saved = JSON.parse(savedText);
-    if (!saved || !difficultyNames[saved.difficulty] || typeof saved.puzzle !== "string" || typeof saved.solution !== "string" || saved.puzzle.length !== 81 || saved.solution.length !== 81 || !Array.isArray(saved.values) || saved.values.length !== 81) return false;
 
-    difficulty = saved.difficulty;
+
+async function loadSavedGame() {
+  try {
+    const savedText = localStorage.getItem(STORAGE_GAME);
+    if (!savedText) return false;
+    const saved = JSON.parse(savedText);
+    if (!saved || saved.solution || !difficultyNames[saved.difficulty] || typeof saved.sessionId !== "string" || !Array.isArray(saved.values) || saved.values.length !== 81) {
+      localStorage.removeItem(STORAGE_GAME);
+      return false;
+    }
+
+    const secure = await secureRequest("resume", { sessionId: saved.sessionId });
+    difficulty = secure.difficulty;
     puzzleIndex = 0;
-    puzzle = saved.puzzle;
-    solution = saved.solution;
-    currentPuzzleId = typeof saved.puzzleId === "string" ? saved.puzzleId : `legacy-${difficulty}-${puzzle.slice(0, 12)}`;
-    currentPuzzleSource = saved.puzzleSource === "generated" ? "generated" : "verified";
-    currentQualityScore = Number(saved.qualityScore) || 0;
-    currentGivenCount = Number(saved.givenCount) || [...puzzle].filter(value => value !== "0").length;
-    activeRowMask = validMask(saved.rowMask) ? saved.rowMask.map(Number) : [...DIFFICULTY_RULES[difficulty].rowMask];
-    activeColMask = validMask(saved.colMask) ? saved.colMask.map(Number) : [...DIFFICULTY_RULES[difficulty].colMask];
-    currentClueCount = Number(saved.clueCount) ||
-      activeRowMask.reduce((sum, value) => sum + value, 0) +
-      activeColMask.reduce((sum, value) => sum + value, 0);
-    rowClues = Array.isArray(saved.rowClues) && saved.rowClues.length === 9 ? saved.rowClues.map(Number) : [];
-    colClues = Array.isArray(saved.colClues) && saved.colClues.length === 9 ? saved.colClues.map(Number) : [];
+    puzzle = secure.puzzle;
+    currentSessionId = secure.sessionId;
+    currentPuzzleId = secure.puzzleId || secure.sessionId;
+    currentPuzzleSource = "secure-server";
+    currentQualityScore = Number(secure.qualityScore) || 0;
+    currentGivenCount = Number(secure.givenCount) || [...puzzle].filter(value => value !== "0").length;
+    currentClueCount = Number(secure.clueCount) || 0;
+    activeRowMask = validMask(secure.rowMask) ? secure.rowMask.map(Number) : [...DIFFICULTY_RULES[difficulty].rowMask];
+    activeColMask = validMask(secure.colMask) ? secure.colMask.map(Number) : [...DIFFICULTY_RULES[difficulty].colMask];
+    rowClues = Array.isArray(secure.rowClues) ? secure.rowClues.map(Number) : [];
+    colClues = Array.isArray(secure.colClues) ? secure.colClues.map(Number) : [];
     values = saved.values.map(String);
+    for (let i = 0; i < 81; i++) if (puzzle[i] !== "0") values[i] = puzzle[i];
     notes = Array.isArray(saved.notes) && saved.notes.length === 81 ? saved.notes.map(item => Array.isArray(item) ? item.map(String) : []) : Array.from({ length: 81 }, () => []);
     selectedIndex = Number.isInteger(saved.selectedIndex) ? saved.selectedIndex : null;
     mistakes = Number(saved.mistakes) || 0;
-    hintsRemaining = Number.isInteger(saved.hintsRemaining) ? saved.hintsRemaining : DIFFICULTY_RULES[saved.difficulty].hints;
+    hintsRemaining = Number.isInteger(secure.hintsRemaining) ? secure.hintsRemaining : DIFFICULTY_RULES[difficulty].hints;
     seconds = Number(saved.seconds) || 0;
     inputMode = ["number", "note", "auto"].includes(saved.inputMode) ? saved.inputMode : "number";
     paused = false;
     gameFinished = false;
     validationRequested = false;
+    validationInFlight = false;
     history = [];
     future = [];
     calculateSandwichClues();
@@ -2987,19 +2445,22 @@ function loadSavedGame() {
     if (inputMode === "auto") refreshAutoCandidates();
     renderAll();
     restartTimer();
-    showToast("Resumed your unfinished game");
+    showToast("Resumed your game from the secure server");
     return true;
   } catch {
+    localStorage.removeItem(STORAGE_GAME);
     return false;
   }
 }
 
+
+
 function saveGame() {
-  if (gameFinished) return;
+  if (gameFinished || !currentSessionId) return;
   localStorage.setItem(STORAGE_GAME, JSON.stringify({
+    sessionId: currentSessionId,
     difficulty,
     puzzle,
-    solution,
     puzzleId: currentPuzzleId,
     puzzleSource: currentPuzzleSource,
     qualityScore: currentQualityScore,
@@ -3018,6 +2479,7 @@ function saveGame() {
     inputMode
   }));
 }
+
 
 function renderAll() {
   difficultyLabelEl.textContent = difficultyNames[difficulty];
@@ -3108,13 +2570,13 @@ function refreshHighlights() {
   updateClueHighlights();
 }
 
+
 function isIncorrect(index) {
-  const rules = DIFFICULTY_RULES[difficulty];
-  if (!rules.immediateErrors && !validationRequested && !gameFinished) return false;
   const value = values[index];
   if (value === "0" || puzzle[index] !== "0") return false;
-  return value !== solution[index] || hasDuplicate(index);
+  return hasDuplicate(index);
 }
+
 
 function hasDuplicate(index) {
   const value = values[index];
@@ -3139,25 +2601,34 @@ function selectCell(index) {
   playTone(420, .025, "sine", .025);
 }
 
+
 function inputNumber(number) {
   if (paused || gameFinished || selectedIndex === null || puzzle[selectedIndex] !== "0") return;
-  pushHistory();
   validationRequested = false;
 
   if (inputMode === "note" && values[selectedIndex] === "0") {
+    pushHistory();
     toggleNote(selectedIndex, number);
     playTone(520, .035, "sine", .035);
   } else {
+    const previous = values[selectedIndex];
+    values[selectedIndex] = number;
+    const duplicate = hasDuplicate(selectedIndex);
+    values[selectedIndex] = previous;
+
+    if (duplicate) {
+      mistakes++;
+      renderAll();
+      showToast("A row, column, or 3×3 box cannot contain duplicate digits");
+      playTone(165, .12, "square", .035);
+      return;
+    }
+
+    pushHistory();
     values[selectedIndex] = number;
     notes[selectedIndex] = [];
-    if (number !== solution[selectedIndex]) {
-      mistakes++;
-      playTone(165, .12, "square", .035);
-      if (DIFFICULTY_RULES[difficulty].immediateErrors) showToast("That number is incorrect");
-    } else {
-      removeNoteFromPeers(selectedIndex, number);
-      playTone(690, .055, "sine", .045);
-    }
+    removeNoteFromPeers(selectedIndex, number);
+    playTone(690, .055, "sine", .045);
     if (inputMode === "auto") refreshAutoCandidates();
   }
 
@@ -3166,6 +2637,7 @@ function inputNumber(number) {
   saveGame();
   checkWin();
 }
+
 
 function toggleNote(index, number) {
   const set = new Set(notes[index]);
@@ -3186,36 +2658,48 @@ function eraseCell() {
   playTone(330, .035, "sine", .025);
 }
 
-function giveHint() {
+
+async function giveHint() {
   if (paused || gameFinished) return;
   if (hintsRemaining <= 0) {
     showToast(difficulty === "impossible" ? "Hints are locked in Impossible mode 😈" : "No hints remaining");
     playTone(150, .10, "square", .03);
     return;
   }
+  if (!currentSessionId) return;
 
-  const targets = values
-    .map((value, index) => value !== solution[index] && puzzle[index] === "0" ? index : -1)
-    .filter(index => index >= 0);
-
-  if (!targets.length) return;
-
-  const target = targets.includes(selectedIndex) ? selectedIndex : targets[0];
-  pushHistory();
-  hintsRemaining--;
-  values[target] = solution[target];
-  notes[target] = [];
-  selectedIndex = target;
-  removeNoteFromPeers(target, values[target]);
-  if (inputMode === "auto") refreshAutoCandidates();
-  validationRequested = false;
-  future = [];
-  renderAll();
-  saveGame();
-  playSuccessSound();
-  showToast(`Filled one hint; ${hintsRemaining} remaining`);
-  checkWin();
+  hintBtn.disabled = true;
+  try {
+    const result = await secureRequest("hint", {
+      sessionId: currentSessionId,
+      values: values.join(""),
+      index: selectedIndex
+    });
+    pushHistory();
+    const target = Number(result.index);
+    const number = String(result.value);
+    hintsRemaining = Number(result.hintsRemaining);
+    values[target] = number;
+    notes[target] = [];
+    selectedIndex = target;
+    removeNoteFromPeers(target, number);
+    if (inputMode === "auto") refreshAutoCandidates();
+    validationRequested = false;
+    future = [];
+    renderAll();
+    saveGame();
+    playSuccessSound();
+    showToast(`Secure server filled one hint; ${hintsRemaining} remaining`);
+    checkWin();
+  } catch (error) {
+    if (error.code === "no_hints") hintsRemaining = 0;
+    showToast("Hints are temporarily unavailable");
+    renderAll();
+  } finally {
+    updateControls();
+  }
 }
+
 
 function removeNoteFromPeers(index, number) {
   const row = Math.floor(index / 9);
@@ -3326,52 +2810,33 @@ function refreshAutoCandidates() {
   notes = notes.map((_, index) => values[index] === "0" ? getCandidates(index) : []);
 }
 
-function checkBoard() {
+
+async function checkBoard() {
   if (paused || gameFinished) return;
-
   const rules = DIFFICULTY_RULES[difficulty];
-  let wrong = 0;
-  let empty = 0;
+  const empty = values.filter(value => value === "0").length;
+  const duplicate = values.some((value, index) => value !== "0" && hasDuplicate(index));
+  const clueErrors = countCompletedClueErrors();
 
-  values.forEach((value, index) => {
-    if (value === "0") empty++;
-    else if (value !== solution[index]) wrong++;
-  });
-
-  if (rules.checkRequiresFull && empty > 0) {
-    showToast(`Impossible mode requires a full board before checking; ${empty} cell(s) remain`);
-    playTone(170, .10, "square", .03);
+  if (duplicate || clueErrors > 0) {
+    showToast("There is a Sudoku-rule or outside-clue conflict");
+    playTone(170, .12, "square", .035);
     return;
   }
 
-  const clueErrors = countCompletedClueErrors();
-
-  if (difficulty === "impossible") {
-    if (wrong > 0 || clueErrors > 0) {
-      showToast("Not solved yet: a number or outside clue is still wrong, but Impossible mode will not reveal where 😈");
-      playTone(145, .16, "square", .04);
+  if (empty > 0) {
+    if (rules.checkRequiresFull) {
+      showToast(`Impossible mode requires a full board; ${empty} cell(s) remain`);
     } else {
-      checkWin();
+      showToast(`No rule conflict found; ${empty} cell(s) remain. The full answer is verified only on the server.`);
+      playSuccessSound();
     }
     return;
   }
 
-  validationRequested = true;
-  renderAll();
-
-  if (wrong > 0 || clueErrors > 0) {
-    const parts = [];
-    if (wrong > 0) parts.push(`${wrong} incorrect cell(s)`);
-    if (clueErrors > 0) parts.push(`${clueErrors} provided sandwich clue(s) do not match`);
-    showToast(parts.join(", "));
-    playTone(170, .12, "square", .035);
-  } else if (empty > 0) {
-    showToast(`Everything is correct so far; ${empty} cell(s) remain`);
-    playSuccessSound();
-  } else {
-    checkWin();
-  }
+  await checkWin(true);
 }
+
 
 
 function updateStartButton() {
@@ -3521,17 +2986,19 @@ function updateControls() {
   updatePauseUI();
 }
 
+
 function updateNumberPad() {
   [...numbersEl.children].forEach(button => {
     const number = button.dataset.number;
-    const correctCount = values.reduce((total, value, index) => total + (value === number && value === solution[index] ? 1 : 0), 0);
-    const remaining = Math.max(0, 9 - correctCount);
+    const usedCount = values.reduce((total, value) => total + (value === number ? 1 : 0), 0);
+    const remaining = Math.max(0, 9 - usedCount);
     button.dataset.left = DIFFICULTY_RULES[difficulty].showRemaining ? String(remaining) : "";
     button.classList.toggle("complete", remaining === 0);
     button.disabled = remaining === 0;
     button.setAttribute("aria-label", `Enter number ${number}, ${remaining} remaining`);
   });
 }
+
 
 function updateHistoryButtons() {
   undoBtn.disabled = history.length === 0;
@@ -3547,20 +3014,12 @@ function sandwichSum(line) {
   return line.slice(start, end).reduce((sum, value) => sum + Number(value || 0), 0);
 }
 
-function calculateSandwichClues() {
-  const solved = solution.split("");
-  const computedRows = Array.from(
-    { length: 9 },
-    (_, row) => sandwichSum(solved.slice(row * 9, row * 9 + 9))
-  );
-  const computedCols = Array.from(
-    { length: 9 },
-    (_, col) => sandwichSum(Array.from({ length: 9 }, (_, row) => solved[row * 9 + col]))
-  );
 
-  if (!Array.isArray(rowClues) || rowClues.length !== 9) rowClues = computedRows;
-  if (!Array.isArray(colClues) || colClues.length !== 9) colClues = computedCols;
+function calculateSandwichClues() {
+  if (!Array.isArray(rowClues) || rowClues.length !== 9) rowClues = Array(9).fill(0);
+  if (!Array.isArray(colClues) || colClues.length !== 9) colClues = Array(9).fill(0);
 }
+
 
 function renderSandwichClues() {
   colCluesEl.innerHTML = "";
@@ -3654,32 +3113,59 @@ function sandwichBoardValid() {
   return true;
 }
 
-function checkWin() {
-  if (values.join("") !== solution || !sandwichBoardValid()) {
-    if (difficulty === "impossible" && values.every(value => value !== "0")) {
-      showToast("The board is full, but a number or provided sandwich clue is still incorrect 😈");
+
+async function checkWin(manual = false) {
+  if (gameFinished || validationInFlight || values.some(value => value === "0") || !currentSessionId) return;
+
+  const duplicate = values.some((value, index) => value !== "0" && hasDuplicate(index));
+  if (duplicate || !sandwichBoardValid()) {
+    if (manual || difficulty === "impossible") {
+      showToast("The board is full, but a Sudoku rule or outside clue still conflicts 😈");
       playTone(145, .16, "square", .04);
     }
     return;
   }
 
-  gameFinished = true;
-  paused = false;
-  syncBgmState();
-  clearInterval(timerId);
-  localStorage.removeItem(STORAGE_GAME);
-  const isNewBest = saveBestTime();
-  updateBestTime();
-  playWinSound();
-  winTextEl.textContent =
-    `You completed Sandwich Sudoku · ${difficultyNames[difficulty]} in ${formatTime(seconds)}, ` +
-    `${mistakes} mistake(s); puzzle source: ${sourceLabel(currentPuzzleSource)}.` +
-    `${isNewBest ? " New best time!" : ""}`;
-  setTimeout(() => {
-    if (!winModalEl.open) winModalEl.showModal();
-    playAgainBtn.focus();
-  }, 240);
+  validationInFlight = true;
+  try {
+    const result = await secureRequest("validate", {
+      sessionId: currentSessionId,
+      values: values.join("")
+    });
+    if (!result.complete || !result.correct) {
+      mistakes++;
+      renderAll();
+      showToast(difficulty === "impossible"
+        ? "Not solved yet; the server will not reveal the wrong position 😈"
+        : "Not solved yet; the server will not reveal the full answer");
+      playTone(145, .16, "square", .04);
+      saveGame();
+      return;
+    }
+
+    gameFinished = true;
+    paused = false;
+    syncBgmState();
+    clearInterval(timerId);
+    localStorage.removeItem(STORAGE_GAME);
+    const isNewBest = saveBestTime();
+    updateBestTime();
+    playWinSound();
+    winTextEl.textContent =
+      `You completed Sandwich Sudoku · ${difficultyNames[difficulty]} in ${formatTime(seconds)}, ` +
+      `${mistakes} mistake(s); the answer was verified by the secure server.` +
+      `${isNewBest ? " New best time!" : ""}`;
+    setTimeout(() => {
+      if (!winModalEl.open) winModalEl.showModal();
+      playAgainBtn.focus();
+    }, 240);
+  } catch {
+    showToast("Secure validation is unavailable; your progress is saved");
+  } finally {
+    validationInFlight = false;
+  }
 }
+
 
 function statsKey() {
   return `sandwich:${difficulty}`;
@@ -3705,12 +3191,16 @@ function updateBestTime() {
   bestTimeEl.textContent = best ? formatTime(best) : "No Record Yet";
 }
 
+
 function clearRecords() {
   localStorage.removeItem(STORAGE_GAME);
+  localStorage.removeItem(LEGACY_STORAGE_GAME);
+  localStorage.removeItem(STORAGE_GENERATED_POOL);
   localStorage.removeItem(STORAGE_STATS);
   updateBestTime();
   showToast("Game progress and best times cleared");
 }
+
 
 function restartTimer() {
   clearInterval(timerId);
@@ -4070,9 +3560,14 @@ document.addEventListener("visibilitychange", () => {
 });
 
 initNumberPad();
-if (!loadSavedGame()) newGame(false);
 showSetupView();
 startBackgroundGenerator();
+clearInsecureLegacyData();
+(async () => {
+  const loaded = await loadSavedGame();
+  if (!loaded) await newGame(false);
+  updateStartButton();
+})();
 </script>
 </body>
 </html>
