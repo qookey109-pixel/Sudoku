@@ -3463,7 +3463,13 @@ networkBtn.addEventListener("click", () => {
 });
 
 
-startGameBtn.addEventListener("click", showGameView);
+startGameBtn.addEventListener("click", () => {
+  if (!currentSessionId) {
+    newGame(false);
+    return;
+  }
+  showGameView();
+});
 backToMenuBtn.addEventListener("click", showSetupView);
 
 gameMenuBtn.addEventListener("click", () => {
