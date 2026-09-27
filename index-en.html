@@ -305,6 +305,8 @@ button:disabled {
 .board {
   display: grid;
   grid-template-columns: repeat(9, minmax(0, 1fr));
+  grid-template-rows: repeat(9, minmax(0, 1fr));
+  grid-auto-rows: minmax(0, 1fr);
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -318,8 +320,11 @@ button:disabled {
 .cell {
   position: relative;
   display: grid;
+  width: 100%;
+  height: 100%;
   min-width: 0;
   min-height: 0;
+  overflow: hidden;
   padding: 0;
   place-items: center;
   border: 0;
@@ -2266,6 +2271,8 @@ let audioContext = null;
 let bgmMasterGain = null;
 let bgmTimer = null;
 let bgmStep = 0;
+let bgmNextStepTime = 0;
+let bgmUnlockArmed = false;
 let currentView = "setup";
 
 
@@ -3242,6 +3249,9 @@ function moveSelection(deltaRow, deltaCol) {
 
 
 const BGM_STEP_MS = 860;
+const BGM_STEP_SECONDS = BGM_STEP_MS / 1000;
+const BGM_LOOKAHEAD_MS = 100;
+const BGM_SCHEDULE_AHEAD_SECONDS = 0.4;
 const BGM_PROGRESSION = [
   { bass: 130.81, notes: [261.63, 329.63, 392.00, 493.88] },
   { bass: 110.00, notes: [220.00, 261.63, 329.63, 392.00] },
@@ -3249,17 +3259,16 @@ const BGM_PROGRESSION = [
   { bass: 98.00, notes: [196.00, 246.94, 293.66, 329.63] }
 ];
 
+
 function ensureAudioContext() {
   try {
     audioContext ||= new (window.AudioContext || window.webkitAudioContext)();
-    if (audioContext.state === "suspended") {
-      audioContext.resume().catch(() => {});
-    }
     return audioContext;
   } catch {
     return null;
   }
 }
+
 
 function ensureBgmMasterGain() {
   const context = ensureAudioContext();
@@ -3274,12 +3283,13 @@ function ensureBgmMasterGain() {
   return bgmMasterGain;
 }
 
-function playBgmVoice(frequency, duration, type = "triangle", volume = 0.01) {
+
+function playBgmVoice(frequency, duration, type = "triangle", volume = 0.01, startTime = null) {
   const context = ensureAudioContext();
   const master = ensureBgmMasterGain();
-  if (!context || !master) return;
+  if (!context || !master || context.state !== "running") return;
 
-  const now = context.currentTime;
+  const now = Math.max(context.currentTime, Number.isFinite(startTime) ? startTime : context.currentTime);
   const oscillator = context.createOscillator();
   const filter = context.createBiquadFilter();
   const gain = context.createGain();
@@ -3300,57 +3310,96 @@ function playBgmVoice(frequency, duration, type = "triangle", volume = 0.01) {
   oscillator.stop(now + duration + 0.08);
 }
 
-function scheduleBgmStep() {
-  if (
-    !bgmEnabled ||
-    currentView !== "game" ||
-    paused ||
-    gameFinished ||
-    document.hidden
-  ) return;
+
+
+function scheduleBgmStep(startTime = null) {
+  const context = ensureAudioContext();
+  if (!context || context.state !== "running") return;
 
   const bar = Math.floor(bgmStep / 4) % BGM_PROGRESSION.length;
   const position = bgmStep % 4;
   const chord = BGM_PROGRESSION[bar];
+  const when = Number.isFinite(startTime) ? startTime : context.currentTime;
 
-  // Soft arpeggio.
-  playBgmVoice(chord.notes[position], 0.72, "triangle", 0.020);
+  playBgmVoice(chord.notes[position], 0.72, "triangle", 0.020, when);
 
-  // A gentle bass note at the start of each bar.
   if (position === 0) {
-    playBgmVoice(chord.bass, 2.7, "sine", 0.016);
-
-    // Quiet sustained chord pad.
+    playBgmVoice(chord.bass, 2.7, "sine", 0.016, when);
     chord.notes.slice(0, 3).forEach((frequency, index) => {
-      playBgmVoice(frequency / 2, 2.9, "sine", 0.0050 + index * 0.0007);
+      playBgmVoice(frequency / 2, 2.9, "sine", 0.0050 + index * 0.0007, when);
     });
   }
 
   bgmStep++;
 }
 
+
+
+function shouldBgmPlay() {
+  return (
+    bgmEnabled &&
+    !document.hidden &&
+    (
+      currentView === "setup" ||
+      (currentView === "game" && !paused && !gameFinished)
+    )
+  );
+}
+
+function pumpBgmSchedule() {
+  const context = ensureAudioContext();
+  if (!context || context.state !== "running" || !shouldBgmPlay()) return;
+
+  if (!bgmNextStepTime || bgmNextStepTime < context.currentTime - BGM_STEP_SECONDS) {
+    bgmNextStepTime = context.currentTime + 0.05;
+  }
+
+  const horizon = context.currentTime + BGM_SCHEDULE_AHEAD_SECONDS;
+  while (bgmNextStepTime < horizon) {
+    scheduleBgmStep(bgmNextStepTime);
+    bgmNextStepTime += BGM_STEP_SECONDS;
+  }
+}
+
+function armBgmUnlock() {
+  if (!bgmEnabled || bgmUnlockArmed) return;
+  bgmUnlockArmed = true;
+
+  const events = ["pointerdown", "touchstart", "keydown"];
+  const unlock = () => {
+    events.forEach(type => document.removeEventListener(type, unlock, true));
+    bgmUnlockArmed = false;
+
+    const context = ensureAudioContext();
+    if (!context) return;
+    context.resume()
+      .then(() => {
+        if (context.state === "running") {
+          startBgm();
+        } else {
+          armBgmUnlock();
+        }
+      })
+      .catch(() => armBgmUnlock());
+  };
+
+  events.forEach(type => document.addEventListener(type, unlock, { capture: true, once: true }));
+}
+
+
 function startBgm() {
-  if (
-    !bgmEnabled ||
-    currentView !== "game" ||
-    paused ||
-    gameFinished ||
-    document.hidden ||
-    bgmTimer
-  ) return;
+  if (!shouldBgmPlay() || bgmTimer) return;
 
   const context = ensureAudioContext();
   if (!context) return;
 
-  // iPhone Safari requires AudioContext.resume() to complete after a user gesture.
-  if (context.state === "suspended") {
+  if (context.state !== "running") {
     context.resume()
       .then(() => {
-        if (!bgmTimer) startBgm();
+        if (context.state === "running") startBgm();
+        else armBgmUnlock();
       })
-      .catch(() => {
-        showToast("Tap the BGM button at the top right once more to start music");
-      });
+      .catch(() => armBgmUnlock());
     return;
   }
 
@@ -3361,15 +3410,19 @@ function startBgm() {
   master.gain.setValueAtTime(Math.max(master.gain.value, 0.0001), context.currentTime);
   master.gain.linearRampToValueAtTime(0.96, context.currentTime + 0.12);
 
-  scheduleBgmStep();
-  bgmTimer = window.setInterval(scheduleBgmStep, BGM_STEP_MS);
+  bgmNextStepTime = context.currentTime + 0.05;
+  pumpBgmSchedule();
+  bgmTimer = window.setInterval(pumpBgmSchedule, BGM_LOOKAHEAD_MS);
 }
+
+
 
 function stopBgm() {
   if (bgmTimer) {
     window.clearInterval(bgmTimer);
     bgmTimer = null;
   }
+  bgmNextStepTime = 0;
 
   if (audioContext && bgmMasterGain) {
     const now = audioContext.currentTime;
@@ -3382,25 +3435,27 @@ function stopBgm() {
   }
 }
 
-function syncBgmState() {
-  const shouldPlay =
-    bgmEnabled &&
-    currentView === "game" &&
-    !paused &&
-    !gameFinished &&
-    !document.hidden;
 
-  if (shouldPlay) startBgm();
-  else stopBgm();
+
+function syncBgmState() {
+  if (shouldBgmPlay()) {
+    startBgm();
+  } else {
+    stopBgm();
+  }
 }
+
+
 
 function toggleBgm() {
   bgmEnabled = !bgmEnabled;
   localStorage.setItem(STORAGE_BGM, bgmEnabled ? "on" : "off");
   updateBgmUI();
+  if (bgmEnabled) armBgmUnlock();
   syncBgmState();
   showToast(bgmEnabled ? "Background music on 🎵" : "Background music off");
 }
+
 
 function updateBgmUI() {
   [bgmBtn, bgmHeaderBtn].forEach(button => {
@@ -3569,6 +3624,10 @@ initNumberPad();
 showSetupView();
 startBackgroundGenerator();
 clearInsecureLegacyData();
+if (bgmEnabled) {
+  armBgmUnlock();
+  syncBgmState();
+}
 (async () => {
   const loaded = await loadSavedGame();
   if (!loaded) await newGame(false);
